@@ -4,8 +4,8 @@ const { getCars, deleteCar, changeStatusCar, addCar } = require('../controllers/
 const router = express.Router();
 
 router.get('/cars', getCars);
-router.patch('/cars/:id', changeStatusCar);
-router.delete('/cars/:id', deleteCar);
-router.post('/cars', addCar);
+// router.patch('/cars/:id', changeStatusCar);
+// router.delete('/cars/:id', deleteCar);
+// router.post('/cars', addCar);
 
 module.exports = router;
