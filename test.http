@@ -6,3 +6,20 @@ Content-Type: application/json
 {
     "status": "available"
 }
+###
+Delete http://localhost:3000/cars/2
+###
+POST http://localhost:3000/cars
+Content-Type: application/json
+
+{
+      "id": 2,
+      "title": "Bargain!",
+      "image": "http://localhost:3000/images/car2.png",
+      "status": "available",
+      "price": "8700",
+      "miles": 113666,
+      "year_of_make": 2007,
+      "description": "A bit worn, but still drives. For the adventurous person who is willing to take risks and eager to have new experiences.",
+      "owner": 2
+    }
