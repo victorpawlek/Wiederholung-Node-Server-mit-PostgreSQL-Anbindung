@@ -7,13 +7,12 @@ Content-Type: application/json
     "status": "available"
 }
 ###
-Delete http://localhost:3000/cars/2
+Delete http://localhost:3000/cars/10
 ###
 POST http://localhost:3000/cars
 Content-Type: application/json
 
 {
-      "id": 2,
       "title": "Bargain!",
       "image": "http://localhost:3000/images/car2.png",
       "status": "available",
