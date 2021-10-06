@@ -21,12 +21,12 @@ async function changeStatusCar(id, status) {
 
 async function deleteCar(id) {
   await db.query('DELETE from cars where id= $1', [id]);
-  return await getCars();
+  return getCars();
 }
 
 async function addCar(data) {
   const cars = await getCars();
-  const id = Math.max(...cars.data.map(car => car.id))+1;
+  const id = Math.max(...cars.data.map((car) => car.id)) + 1;
   const { rows } = await db.query(
     'INSERT INTO cars (id,title ,image ,status ,price ,miles ,year_of_make ,description ,owner) VALUES($1, $2, $3, $4,$5,$6,$7,$8,$9) returning *',
     [
