@@ -8,13 +8,15 @@ async function getCars() {
   };
 }
 
-async function changeStatusCar(id,status) {
-  const { rows } = await db.query(`UPDATE cars SET status = ${status} where id=${id}`);
+async function changeStatusCar(id, status) {
+  const { rows } = await db.query('UPDATE cars SET status = $1 where id= $2 returning *', [
+    status,
+    id,
+  ]);
   return {
     code: 200,
     data: rows,
   };
 }
 
-
-module.exports ={getCars}
+module.exports = { getCars, changeStatusCar };
